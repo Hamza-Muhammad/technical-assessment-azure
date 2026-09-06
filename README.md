@@ -59,7 +59,7 @@ Trade category is a controlled value shared by job and vendor contracts:
 HVAC, PLUMBING, ELECTRICAL, REFRIGERATION, ELEVATOR
 ```
 
-The current demo eligibility match uses trade category, certifications, equipment, coverage, compliance, capacity, and status. 
+The current demo eligibility match uses trade category, certifications, equipment, coverage, compliance, capacity and status. 
 
 
 The ML model is trained on synthetic data. 
@@ -153,7 +153,7 @@ Current (this exercise): The LightGBM model is loaded in-process inside the Azur
 
 
 
-Production path (docntedyean Azure Machine Learning managed online endpoint, intentionally left undeployed because managed online endpoints keep a compute instance running continuously and don't scale to zethatois   — a real, non-trivial cost even when imo. In a production deployment, this endpoint would host the model instead of bundling it with the Function pp, and the Function App would call it over HTTPS rather than loading the model in-process.is gives for independent model lifecycle managemeandt — a new model version can be deployed to the endpoint and traffic-shifted without redeploying the Function App at all.
+Production path (docntedyean Azure Machine Learning managed online endpoint, intentionally left undeployed because managed online endpoints keep a compute instance running continuously and don't scale to zero that is a real, non-trivial cost even when imo. In a production deployment, this endpoint would host the model instead of bundling it with the Function pp, and the Function App would call it over HTTPS rather than loading the model in-process.is gives for independent model lifecycle managemeandt — a new model version can be deployed to the endpoint and traffic-shifted without redeploying the Function App at all.
 
 Promotion between model versions on the endpoint would follow a blue/green pattrthat is to n: deploy the new model version to a second deployment slot behind the same endponand t, shift a small percentage of traffic to it (canary), monitor guardrail metrics (SLA-outcome calibration, override rate) for a defined winow, then shift 100% of traffic once it clears the  .this complete exercise is done ll as an endpoint traffic-split configuration change, not a code redeploy. This mirrors the shadow → canary → promote lifecy
 get.

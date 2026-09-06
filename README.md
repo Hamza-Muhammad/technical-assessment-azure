@@ -153,7 +153,7 @@ Current (this exercise): The LightGBM model is loaded in-process inside the Azur
 
 
 
-Production path (docntedyean Azure Machine Learning managed online endpoint, intentionally left undeployed because managed online endpoints keep a compute instance running continuously and don't scale to zero that is a real, non-trivial cost even when imo. In a production deployment, this endpoint would host the model instead of bundling it with the Function pp, and the Function App would call it over HTTPS rather than loading the model in-process.is gives for independent model lifecycle managemeandt — a new model version can be deployed to the endpoint and traffic-shifted without redeploying the Function App at all.
+Production path (docntedyean Azure Machine Learning managed online endpoint, intentionally left undeployed because managed online endpoints keep a compute instance running continuously and don't scale to zero that is a real, non-trivial cost . In a production deployment, this endpoint would host the model instead of bundling it with the Function app, and the Function App would call it over HTTPS rather than loading the model in-process.this gives independent model lifecycle management and a new model version can be deployed to the endpoint and traffic-shifted without redeploying the Function App at all.
 
 Promotion between model versions on the endpoint would follow a blue/green pattrthat is to n: deploy the new model version to a second deployment slot behind the same endponand t, shift a small percentage of traffic to it (canary), monitor guardrail metrics (SLA-outcome calibration, override rate) for a defined winow, then shift 100% of traffic once it clears the  .this complete exercise is done ll as an endpoint traffic-split configuration change, not a code redeploy. This mirrors the shadow → canary → promote lifecy
 get.
@@ -193,15 +193,15 @@ Blob audit logs record:
 
 Two feedback signals matter here:
 
-Job completion outcomes (SLA met, first-time-fix, actual cost)i.e— the ground truth for "did the recommended vendor actually succeed."
+Job completion outcomes (SLA met, first-time-fix, actual cost) i.e the ground truth for "did the recommended vendor actually succeed."
 Dispatcher overrides (when a human picks someone other than the AI's top pick, with a reason code)is a faaster signal than waiting for outcomes, since a rising rate of a specific override reason can flag a model or data problem before enough completions accumulate to prove it statistically.
 
-In this system: when a job reaches JobCompleted or a dispatcher logs an override, that event is appended to the audit trail alongside the exact feature snapshot that existed at scornggtime.these completeions   jois back to their original scoring run on (jobId, vendorId),— using the point-in-time feature snapshot, never recomputed from current vendor stat, so today's vendor performance can't leak into how an old prediction gets judged. This produces a labeled row (success = slaMet AND firstTimeFix) ready fortrainingn.
+In this system: when a job reaches JobCompleted or a dispatcher logs an override, that event is appended to the audit trail alongside the exact feature snapshot that existed at scornggtime.these completeions are joined back to their original scoring run on (jobId, vendorId) using the point-in-time feature snapshot and never recomputed from current vendor stat so today's vendor performance can't leak into how an old prediction gets judged. This produces a labeled row (success = slaMet AND firstTimeFix) ready for training.
 
 A new model trained this way must beat the live model on held-out data, then pass shadow and canary stage, before being promoted .
 ## Limitations and Next Steps
 
-- Training data is synthetc ;and  production calibration requires historical completed-job data.
+- Training data is synthetc and  production calibration requires historical completed-job data.
 - The live system should use stronger authentication and authorization than the demo's anonymous HTTP routes.Azure Api Management(APIM) can be implemented along RBAC for users. 
 - A real deployment would add private endpoints, stronger network isolation, secret rotation, and operational dashboards.
 - The AML online endpoint is documented but intentionally not deployed for cost control.

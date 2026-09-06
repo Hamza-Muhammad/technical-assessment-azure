@@ -1,0 +1,1463 @@
+[
+  {
+    "vendorId": "VEN-00001",
+    "displayName": "Southport Trades",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 2141,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "ELECTRICAL"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 16
+    },
+    "coverage": {
+      "postalCodes": [
+        "60601",
+        "60618"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.562,
+        "lon": -87.405
+      },
+      "maxTravelKm": 80
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 4,
+      "utilizationPct": 0.368,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 393,
+      "slaHitRate": 0.899,
+      "firstTimeFixRate": 0.762,
+      "acceptanceRate": 0.853,
+      "avgResponseMinutes": 97,
+      "reworkRate": 0.067,
+      "costIndex": 1.05,
+      "csat": 3.87,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 135.99,
+      "afterHoursHourlyUsd": 154.96
+    }
+  },
+  {
+    "vendorId": "VEN-00002",
+    "displayName": "Southport Home Pros",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 295,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "PLUMBING"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 15
+    },
+    "coverage": {
+      "postalCodes": [
+        "60622",
+        "60647"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.731,
+        "lon": -87.879
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 13,
+      "utilizationPct": 0.268,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 128,
+      "slaHitRate": 0.928,
+      "firstTimeFixRate": 0.863,
+      "acceptanceRate": 0.867,
+      "avgResponseMinutes": 167,
+      "reworkRate": 0.071,
+      "costIndex": 1,
+      "csat": 4.15,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 135.99,
+      "afterHoursHourlyUsd": 195.32
+    }
+  },
+  {
+    "vendorId": "VEN-00003",
+    "displayName": "Cornerstone Trades",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 708,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "ELECTRICAL"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 12
+    },
+    "coverage": {
+      "postalCodes": [
+        "60622",
+        "60618"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.585,
+        "lon": -87.77
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 12,
+      "utilizationPct": 0.306,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 184,
+      "slaHitRate": 0.888,
+      "firstTimeFixRate": 0.758,
+      "acceptanceRate": 0.88,
+      "avgResponseMinutes": 120,
+      "reworkRate": 0.041,
+      "costIndex": 0.97,
+      "csat": 4.35,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 150.78,
+      "afterHoursHourlyUsd": 156.88
+    }
+  },
+  {
+    "vendorId": "VEN-00004",
+    "displayName": "Riverside Field Services",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 2134,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "HVAC"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 24
+    },
+    "coverage": {
+      "postalCodes": [
+        "60640",
+        "60618",
+        "60614"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.573,
+        "lon": -87.468
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 16,
+      "utilizationPct": 0.449,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 400,
+      "slaHitRate": 0.91,
+      "firstTimeFixRate": 0.849,
+      "acceptanceRate": 0.759,
+      "avgResponseMinutes": 113,
+      "reworkRate": 0.022,
+      "costIndex": 0.94,
+      "csat": 4.23,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 156,
+      "afterHoursHourlyUsd": 158.06
+    }
+  },
+  {
+    "vendorId": "VEN-00005",
+    "displayName": "Riverside Field Services",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1022,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 22
+    },
+    "coverage": {
+      "postalCodes": [
+        "60602",
+        "60601"
+      ],
+      "homeBaseGeo": {
+        "lat": 42.101,
+        "lon": -87.375
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 6,
+      "utilizationPct": 0.362,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 130,
+      "slaHitRate": 0.842,
+      "firstTimeFixRate": 0.847,
+      "acceptanceRate": 0.859,
+      "avgResponseMinutes": 107,
+      "reworkRate": 0.035,
+      "costIndex": 0.9,
+      "csat": 4.39,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 137.69,
+      "afterHoursHourlyUsd": 181.86
+    }
+  },
+  {
+    "vendorId": "VEN-00006",
+    "displayName": "Cornerstone Field Services",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1614,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "PLUMBING"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 22
+    },
+    "coverage": {
+      "postalCodes": [
+        "60601",
+        "60618",
+        "60640"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.986,
+        "lon": -87.462
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 8,
+      "utilizationPct": 0.247,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 376,
+      "slaHitRate": 0.838,
+      "firstTimeFixRate": 0.782,
+      "acceptanceRate": 0.792,
+      "avgResponseMinutes": 53,
+      "reworkRate": 0.019,
+      "costIndex": 1.05,
+      "csat": 4.39,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 161.43,
+      "afterHoursHourlyUsd": 211.37
+    }
+  },
+  {
+    "vendorId": "VEN-00007",
+    "displayName": "Prairie Home Pros",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 1990,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "HVAC"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 25
+    },
+    "coverage": {
+      "postalCodes": [
+        "60618",
+        "60647",
+        "60614"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.632,
+        "lon": -87.803
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 6,
+      "utilizationPct": 0.272,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 252,
+      "slaHitRate": 0.862,
+      "firstTimeFixRate": 0.803,
+      "acceptanceRate": 0.924,
+      "avgResponseMinutes": 81,
+      "reworkRate": 0.056,
+      "costIndex": 0.92,
+      "csat": 4.85,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 120.32,
+      "afterHoursHourlyUsd": 219.01
+    }
+  },
+  {
+    "vendorId": "VEN-00008",
+    "displayName": "Riverside Home Pros",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1752,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "HVAC"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 17
+    },
+    "coverage": {
+      "postalCodes": [
+        "60622",
+        "60647",
+        "60614",
+        "60602"
+      ],
+      "homeBaseGeo": {
+        "lat": 42.132,
+        "lon": -87.493
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 9,
+      "utilizationPct": 0.773,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 389,
+      "slaHitRate": 0.933,
+      "firstTimeFixRate": 0.795,
+      "acceptanceRate": 0.84,
+      "avgResponseMinutes": 131,
+      "reworkRate": 0.076,
+      "costIndex": 1.2,
+      "csat": 4.67,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 128.06,
+      "afterHoursHourlyUsd": 169.36
+    }
+  },
+  {
+    "vendorId": "VEN-00009",
+    "displayName": "Midtown Mechanical",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1115,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "ELECTRICAL"
+      ],
+      "equipment": [
+        "CRANE_LIFT"
+      ],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 16
+    },
+    "coverage": {
+      "postalCodes": [
+        "60622",
+        "60647",
+        "60601"
+      ],
+      "homeBaseGeo": {
+        "lat": 42.197,
+        "lon": -87.725
+      },
+      "maxTravelKm": 80
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 13,
+      "utilizationPct": 0.76,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 238,
+      "slaHitRate": 0.815,
+      "firstTimeFixRate": 0.882,
+      "acceptanceRate": 0.946,
+      "avgResponseMinutes": 91,
+      "reworkRate": 0.053,
+      "costIndex": 0.91,
+      "csat": 4.67,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 118.28,
+      "afterHoursHourlyUsd": 230.08
+    }
+  },
+  {
+    "vendorId": "VEN-00010",
+    "displayName": "Lakeview Mechanical",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1148,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [
+        "CRANE_LIFT"
+      ],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 14
+    },
+    "coverage": {
+      "postalCodes": [
+        "60647",
+        "60622",
+        "60618",
+        "60614"
+      ],
+      "homeBaseGeo": {
+        "lat": 42.035,
+        "lon": -87.861
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 6,
+      "utilizationPct": 0.215,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 103,
+      "slaHitRate": 0.944,
+      "firstTimeFixRate": 0.895,
+      "acceptanceRate": 0.728,
+      "avgResponseMinutes": 75,
+      "reworkRate": 0.049,
+      "costIndex": 1.16,
+      "csat": 4.71,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 109.77,
+      "afterHoursHourlyUsd": 175.18
+    }
+  },
+  {
+    "vendorId": "VEN-00011",
+    "displayName": "Lakeview Mechanical",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 1226,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "ELECTRICAL"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 24
+    },
+    "coverage": {
+      "postalCodes": [
+        "60622",
+        "60647",
+        "60618",
+        "60602"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.756,
+        "lon": -87.599
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 18,
+      "utilizationPct": 0.557,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 360,
+      "slaHitRate": 0.957,
+      "firstTimeFixRate": 0.905,
+      "acceptanceRate": 0.864,
+      "avgResponseMinutes": 78,
+      "reworkRate": 0.026,
+      "costIndex": 1.02,
+      "csat": 4.6,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 133.95,
+      "afterHoursHourlyUsd": 182.6
+    }
+  },
+  {
+    "vendorId": "VEN-00012",
+    "displayName": "Northside Mechanical",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1806,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 12
+    },
+    "coverage": {
+      "postalCodes": [
+        "60614",
+        "60622",
+        "60640"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.568,
+        "lon": -87.846
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 10,
+      "utilizationPct": 0.517,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 346,
+      "slaHitRate": 0.896,
+      "firstTimeFixRate": 0.846,
+      "acceptanceRate": 0.954,
+      "avgResponseMinutes": 173,
+      "reworkRate": 0.089,
+      "costIndex": 1.18,
+      "csat": 4.09,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 134.17,
+      "afterHoursHourlyUsd": 244.33
+    }
+  },
+  {
+    "vendorId": "VEN-00013",
+    "displayName": "Midtown Solutions",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 480,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [
+        "CRANE_LIFT"
+      ],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 13
+    },
+    "coverage": {
+      "postalCodes": [
+        "60640",
+        "60647"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.837,
+        "lon": -87.929
+      },
+      "maxTravelKm": 65
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 6,
+      "utilizationPct": 0.377,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 260,
+      "slaHitRate": 0.825,
+      "firstTimeFixRate": 0.844,
+      "acceptanceRate": 0.902,
+      "avgResponseMinutes": 64,
+      "reworkRate": 0.046,
+      "costIndex": 1.02,
+      "csat": 4.89,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 153.27,
+      "afterHoursHourlyUsd": 166.15
+    }
+  },
+  {
+    "vendorId": "VEN-00014",
+    "displayName": "Prairie Mechanical",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1255,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 10
+    },
+    "coverage": {
+      "postalCodes": [
+        "60614",
+        "60622",
+        "60640"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.665,
+        "lon": -87.757
+      },
+      "maxTravelKm": 65
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 18,
+      "utilizationPct": 0.873,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 275,
+      "slaHitRate": 0.82,
+      "firstTimeFixRate": 0.934,
+      "acceptanceRate": 0.762,
+      "avgResponseMinutes": 66,
+      "reworkRate": 0.018,
+      "costIndex": 0.95,
+      "csat": 4.8,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 107.71,
+      "afterHoursHourlyUsd": 225.58
+    }
+  },
+  {
+    "vendorId": "VEN-00015",
+    "displayName": "Cornerstone Field Services",
+    "status": "ACTIVE",
+    "tier": "PROBATIONARY",
+    "tenureDays": 1939,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [
+        "CRANE_LIFT"
+      ],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 15
+    },
+    "coverage": {
+      "postalCodes": [
+        "60601",
+        "60614",
+        "60647"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.812,
+        "lon": -87.604
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 10,
+      "utilizationPct": 0.259,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 192,
+      "slaHitRate": 0.954,
+      "firstTimeFixRate": 0.763,
+      "acceptanceRate": 0.933,
+      "avgResponseMinutes": 156,
+      "reworkRate": 0.011,
+      "costIndex": 1.2,
+      "csat": 4.26,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 159.08,
+      "afterHoursHourlyUsd": 212.17
+    }
+  },
+  {
+    "vendorId": "VEN-00016",
+    "displayName": "Lakeview Services",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1279,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "HVAC"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 16
+    },
+    "coverage": {
+      "postalCodes": [
+        "60618",
+        "60622",
+        "60602"
+      ],
+      "homeBaseGeo": {
+        "lat": 42.206,
+        "lon": -87.797
+      },
+      "maxTravelKm": 65
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 13,
+      "utilizationPct": 0.763,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 116,
+      "slaHitRate": 0.979,
+      "firstTimeFixRate": 0.757,
+      "acceptanceRate": 0.705,
+      "avgResponseMinutes": 169,
+      "reworkRate": 0.06,
+      "costIndex": 0.92,
+      "csat": 4.32,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 160.42,
+      "afterHoursHourlyUsd": 160.63
+    }
+  },
+  {
+    "vendorId": "VEN-00017",
+    "displayName": "Midtown Services",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 1544,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 14
+    },
+    "coverage": {
+      "postalCodes": [
+        "60614",
+        "60601",
+        "60602"
+      ],
+      "homeBaseGeo": {
+        "lat": 42.207,
+        "lon": -87.765
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 4,
+      "utilizationPct": 0.638,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 261,
+      "slaHitRate": 0.958,
+      "firstTimeFixRate": 0.836,
+      "acceptanceRate": 0.715,
+      "avgResponseMinutes": 137,
+      "reworkRate": 0.088,
+      "costIndex": 1.08,
+      "csat": 4.11,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 111.95,
+      "afterHoursHourlyUsd": 179.31
+    }
+  },
+  {
+    "vendorId": "VEN-00018",
+    "displayName": "Prairie Home Pros",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 579,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 19
+    },
+    "coverage": {
+      "postalCodes": [
+        "60614",
+        "60602"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.531,
+        "lon": -87.725
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 12,
+      "utilizationPct": 0.467,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 288,
+      "slaHitRate": 0.885,
+      "firstTimeFixRate": 0.851,
+      "acceptanceRate": 0.754,
+      "avgResponseMinutes": 169,
+      "reworkRate": 0.08,
+      "costIndex": 0.88,
+      "csat": 4.7,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 105.07,
+      "afterHoursHourlyUsd": 208.68
+    }
+  },
+  {
+    "vendorId": "VEN-00019",
+    "displayName": "Lakeview Field Services",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 246,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 22
+    },
+    "coverage": {
+      "postalCodes": [
+        "60640",
+        "60618",
+        "60602"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.691,
+        "lon": -87.57
+      },
+      "maxTravelKm": 65
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 6,
+      "utilizationPct": 0.231,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 382,
+      "slaHitRate": 0.95,
+      "firstTimeFixRate": 0.928,
+      "acceptanceRate": 0.869,
+      "avgResponseMinutes": 169,
+      "reworkRate": 0.023,
+      "costIndex": 1.03,
+      "csat": 4.35,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 153.45,
+      "afterHoursHourlyUsd": 230.47
+    }
+  },
+  {
+    "vendorId": "VEN-00020",
+    "displayName": "Union Solutions",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 374,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "PLUMBING"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 17
+    },
+    "coverage": {
+      "postalCodes": [
+        "60614",
+        "60601",
+        "60618"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.974,
+        "lon": -87.308
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 18,
+      "utilizationPct": 0.829,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 128,
+      "slaHitRate": 0.817,
+      "firstTimeFixRate": 0.855,
+      "acceptanceRate": 0.901,
+      "avgResponseMinutes": 161,
+      "reworkRate": 0.033,
+      "costIndex": 0.88,
+      "csat": 4.09,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 146.05,
+      "afterHoursHourlyUsd": 170.52
+    }
+  },
+  {
+    "vendorId": "VEN-00021",
+    "displayName": "Northside Mechanical",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 1620,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "HVAC"
+      ],
+      "equipment": [
+        "CRANE_LIFT"
+      ],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 14
+    },
+    "coverage": {
+      "postalCodes": [
+        "60614",
+        "60640",
+        "60647"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.863,
+        "lon": -87.501
+      },
+      "maxTravelKm": 55
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 2,
+      "utilizationPct": 0.538,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 214,
+      "slaHitRate": 0.943,
+      "firstTimeFixRate": 0.867,
+      "acceptanceRate": 0.912,
+      "avgResponseMinutes": 108,
+      "reworkRate": 0.038,
+      "costIndex": 0.98,
+      "csat": 4.62,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 127.53,
+      "afterHoursHourlyUsd": 196.63
+    }
+  },
+  {
+    "vendorId": "VEN-00022",
+    "displayName": "Fresh Start HVAC (New Partner)",
+    "status": "ACTIVE",
+    "tier": "STANDARD",
+    "tenureDays": 45,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "HVAC"
+      ],
+      "equipment": [],
+      "supportsAfterHours": false,
+      "maxConcurrentJobs": 24
+    },
+    "coverage": {
+      "postalCodes": [
+        "60618",
+        "60602",
+        "60640"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.897,
+        "lon": -87.655
+      },
+      "maxTravelKm": 40
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 1,
+      "utilizationPct": 0.1,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 4,
+      "slaHitRate": 0.97,
+      "firstTimeFixRate": 0.94,
+      "acceptanceRate": 0.9,
+      "avgResponseMinutes": 60,
+      "reworkRate": 0.01,
+      "costIndex": 0.85,
+      "csat": 4.8,
+      "dataSufficiency": "COLD_START"
+    },
+    "commercial": {
+      "standardHourlyUsd": 129.85,
+      "afterHoursHourlyUsd": 237.61
+    }
+  },
+  {
+    "vendorId": "VEN-00023",
+    "displayName": "QuickFix Plumbing (Non-Compliant)",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 250,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2024-01-01",
+      "certifications": [],
+      "isCompliant": false
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "PLUMBING"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 20
+    },
+    "coverage": {
+      "postalCodes": [
+        "60614",
+        "60647"
+      ],
+      "homeBaseGeo": {
+        "lat": 42.005,
+        "lon": -87.696
+      },
+      "maxTravelKm": 80
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 5,
+      "utilizationPct": 0.858,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 311,
+      "slaHitRate": 0.835,
+      "firstTimeFixRate": 0.752,
+      "acceptanceRate": 0.9,
+      "avgResponseMinutes": 104,
+      "reworkRate": 0.043,
+      "costIndex": 0.99,
+      "csat": 4.9,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 136.24,
+      "afterHoursHourlyUsd": 186.07
+    }
+  },
+  {
+    "vendorId": "VEN-00024",
+    "displayName": "Volt Masters (At Capacity)",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 1747,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "ELECTRICAL"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 25
+    },
+    "coverage": {
+      "postalCodes": [
+        "60622",
+        "60614",
+        "60602"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.724,
+        "lon": -87.944
+      },
+      "maxTravelKm": 65
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 25,
+      "utilizationPct": 0.99,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 84,
+      "slaHitRate": 0.946,
+      "firstTimeFixRate": 0.876,
+      "acceptanceRate": 0.947,
+      "avgResponseMinutes": 180,
+      "reworkRate": 0.028,
+      "costIndex": 0.88,
+      "csat": 4.83,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 123.76,
+      "afterHoursHourlyUsd": 211.49
+    }
+  },
+  {
+    "vendorId": "VEN-00025",
+    "displayName": "ColdChain Experts",
+    "status": "ACTIVE",
+    "tier": "PREFERRED",
+    "tenureDays": 900,
+    "onProbation": false,
+    "compliance": {
+      "insuranceValidUntil": "2027-06-30",
+      "certifications": [
+        {
+          "code": "EPA_608_UNIVERSAL",
+          "expiresOn": "2028-01-01"
+        }
+      ],
+      "isCompliant": true
+    },
+    "capabilities": {
+      "tradeCategories": [
+        "REFRIGERATION"
+      ],
+      "equipment": [],
+      "supportsAfterHours": true,
+      "maxConcurrentJobs": 19
+    },
+    "coverage": {
+      "postalCodes": [
+        "60640",
+        "60647",
+        "60614"
+      ],
+      "homeBaseGeo": {
+        "lat": 41.562,
+        "lon": -87.331
+      },
+      "maxTravelKm": 80
+    },
+    "capacity": {
+      "asOfUtc": "2026-09-18T14:20:00Z",
+      "openJobs": 9,
+      "utilizationPct": 0.411,
+      "acceptingNewWork": true
+    },
+    "performance": {
+      "windowDays": 90,
+      "jobsCompleted": 308,
+      "slaHitRate": 0.91,
+      "firstTimeFixRate": 0.88,
+      "acceptanceRate": 0.745,
+      "avgResponseMinutes": 81,
+      "reworkRate": 0.017,
+      "costIndex": 1.03,
+      "csat": 4.69,
+      "dataSufficiency": "SUFFICIENT"
+    },
+    "commercial": {
+      "standardHourlyUsd": 133.53,
+      "afterHoursHourlyUsd": 195.3
+    }
+  }
+]

@@ -1,0 +1,409 @@
+{
+  "scoringRunId": "SCR-05230F1E2CF740A2B",
+  "jobId": "JOB-DEMO-001",
+  "generatedAtUtc": "2026-09-04T15:43:11Z",
+  "latencyMs": 9.9,
+  "binding": {
+    "rulesetVersion": "RULES-2026.09.1",
+    "modelName": "vendor-uplift",
+    "modelVersion": "1.0.0",
+    "scoringMode": "RULES_PLUS_ML",
+    "mlTrustFactor": 0.55,
+    "degradedReason": null
+  },
+  "candidateSummary": {
+    "vendorsInNetwork": 25,
+    "afterHardFilter": 6,
+    "exclusions": {
+      "TRADE_MISMATCH": 18,
+      "NOT_COMPLIANT": 1
+    }
+  },
+  "ranked": [
+    {
+      "rank": 1,
+      "vendorId": "VEN-00021",
+      "finalScore": 72.18,
+      "ruleScore": 87.66,
+      "mlScore": 36.49,
+      "confidence": 0.865,
+      "confidenceBand": "HIGH",
+      "predictions": {
+        "pSlaMet": {
+          "value": 0.832
+        },
+        "pFirstTimeFix": {
+          "value": 0.794
+        },
+        "pAcceptWithin15m": {
+          "value": 0.912
+        },
+        "expectedCostUsd": {
+          "p50": 646.8,
+          "p90": 905.52
+        }
+      },
+      "factors": [
+        {
+          "id": "SLA_HISTORY",
+          "source": "ML",
+          "shap": 14.43,
+          "raw": 0.943,
+          "evidence": "94.3% on-time across 214 jobs in the last 90 days",
+          "contributionPct": 29.8
+        },
+        {
+          "id": "PROXIMITY",
+          "source": "ML",
+          "shap": 13.19,
+          "raw": 13.0,
+          "evidence": "13.0 km from job site",
+          "contributionPct": 27.2
+        },
+        {
+          "id": "REWORK_RATE",
+          "source": "ML",
+          "shap": 8.63,
+          "raw": 0.038,
+          "evidence": "3.8% rework rate over the trailing 90 days",
+          "contributionPct": 17.8
+        },
+        {
+          "id": "FIRST_TIME_FIX",
+          "source": "ML",
+          "shap": 7.14,
+          "raw": 0.867,
+          "evidence": "86.7% first-time-fix rate over 214 jobs",
+          "contributionPct": 14.7
+        },
+        {
+          "id": "DATA_SUFFICIENCY",
+          "source": "ML",
+          "shap": 5.07,
+          "raw": null,
+          "evidence": "Vendor performance history classified SUFFICIENT",
+          "contributionPct": 10.5
+        }
+      ],
+      "counterfactual": "VEN-00007 would rank first if this vendor's final score fell below 69.8.",
+      "rationale": {
+        "template": "Ranked #1 of 6 eligible. Drivers: 94.3% on-time across 214 jobs in the last 90 days; 13.0 km from job site; 3.8% rework rate over the trailing 90 days.",
+        "narrative": null,
+        "source": "TEMPLATE",
+        "groundednessCheck": "SKIPPED",
+        "fallbackUsed": false
+      },
+      "automationEligible": true,
+      "blockingGates": []
+    },
+    {
+      "rank": 2,
+      "vendorId": "VEN-00007",
+      "finalScore": 69.79,
+      "ruleScore": 82.09,
+      "mlScore": 41.43,
+      "confidence": 0.748,
+      "confidenceBand": "MEDIUM",
+      "predictions": {
+        "pSlaMet": {
+          "value": 0.78
+        },
+        "pFirstTimeFix": {
+          "value": 0.75
+        },
+        "pAcceptWithin15m": {
+          "value": 0.924
+        },
+        "expectedCostUsd": {
+          "p50": 607.2,
+          "p90": 850.08
+        }
+      },
+      "factors": [
+        {
+          "id": "PROXIMITY",
+          "source": "ML",
+          "shap": 20.08,
+          "raw": 32.4,
+          "evidence": "32.4 km from job site",
+          "contributionPct": 38.5
+        },
+        {
+          "id": "CURRENT_LOAD",
+          "source": "ML",
+          "shap": 8.92,
+          "raw": 0.272,
+          "evidence": "27.2% utilised, 6 open jobs",
+          "contributionPct": 17.1
+        },
+        {
+          "id": "RESPONSE_TIME",
+          "source": "ML",
+          "shap": 8.87,
+          "raw": 81,
+          "evidence": "averages 81 min to respond to a dispatch",
+          "contributionPct": 17.0
+        },
+        {
+          "id": "SLA_HISTORY",
+          "source": "ML",
+          "shap": 7.59,
+          "raw": 0.862,
+          "evidence": "86.2% on-time across 252 jobs in the last 90 days",
+          "contributionPct": 14.5
+        },
+        {
+          "id": "REWORK_RATE",
+          "source": "ML",
+          "shap": 6.68,
+          "raw": 0.056,
+          "evidence": "5.6% rework rate over the trailing 90 days",
+          "contributionPct": 12.8
+        }
+      ],
+      "counterfactual": null,
+      "rationale": {
+        "template": "Ranked #2 of 6 eligible. Drivers: 32.4 km from job site; 27.2% utilised, 6 open jobs; averages 81 min to respond to a dispatch.",
+        "narrative": null,
+        "source": "TEMPLATE",
+        "groundednessCheck": "SKIPPED",
+        "fallbackUsed": false
+      },
+      "automationEligible": false,
+      "blockingGates": [
+        "LOW_CONFIDENCE"
+      ]
+    },
+    {
+      "rank": 3,
+      "vendorId": "VEN-00022",
+      "finalScore": 66.25,
+      "ruleScore": 92.07,
+      "mlScore": 6.72,
+      "confidence": 0.223,
+      "confidenceBand": "LOW",
+      "predictions": {
+        "pSlaMet": {
+          "value": 0.816
+        },
+        "pFirstTimeFix": {
+          "value": 0.801
+        },
+        "pAcceptWithin15m": {
+          "value": 0.9
+        },
+        "expectedCostUsd": {
+          "p50": 561.0,
+          "p90": 785.4
+        }
+      },
+      "factors": [
+        {
+          "id": "DATA_SUFFICIENCY",
+          "source": "ML",
+          "shap": -23.56,
+          "raw": null,
+          "evidence": "Vendor performance history classified COLD_START",
+          "contributionPct": -28.2
+        },
+        {
+          "id": "CURRENT_LOAD",
+          "source": "ML",
+          "shap": 19.04,
+          "raw": 0.1,
+          "evidence": "10.0% utilised, 1 open jobs",
+          "contributionPct": 22.8
+        },
+        {
+          "id": "PROXIMITY",
+          "source": "ML",
+          "shap": -16.27,
+          "raw": 0.5,
+          "evidence": "0.5 km from job site",
+          "contributionPct": -19.5
+        },
+        {
+          "id": "FIRST_TIME_FIX",
+          "source": "ML",
+          "shap": 12.65,
+          "raw": 0.94,
+          "evidence": "94.0% first-time-fix rate over 4 jobs",
+          "contributionPct": 15.1
+        },
+        {
+          "id": "SLA_HISTORY",
+          "source": "ML",
+          "shap": 12.03,
+          "raw": 0.97,
+          "evidence": "97.0% on-time across 4 jobs in the last 90 days",
+          "contributionPct": 14.4
+        }
+      ],
+      "counterfactual": null,
+      "rationale": {
+        "template": "Ranked #3 of 6 eligible. Drivers: 10.0% utilised, 1 open jobs; 94.0% first-time-fix rate over 4 jobs; 97.0% on-time across 4 jobs in the last 90 days. Detractors: Vendor performance history classified COLD_START; 0.5 km from job site.",
+        "narrative": null,
+        "source": "TEMPLATE",
+        "groundednessCheck": "SKIPPED",
+        "fallbackUsed": false
+      },
+      "automationEligible": false,
+      "blockingGates": [
+        "LOW_CONFIDENCE"
+      ]
+    },
+    {
+      "rank": 4,
+      "vendorId": "VEN-00004",
+      "finalScore": 62.49,
+      "ruleScore": 80.7,
+      "mlScore": 20.49,
+      "confidence": 0.807,
+      "confidenceBand": "HIGH",
+      "predictions": {
+        "pSlaMet": {
+          "value": 0.767
+        },
+        "pFirstTimeFix": {
+          "value": 0.737
+        },
+        "pAcceptWithin15m": {
+          "value": 0.759
+        },
+        "expectedCostUsd": {
+          "p50": 620.4,
+          "p90": 868.56
+        }
+      },
+      "factors": [
+        {
+          "id": "REWORK_RATE",
+          "source": "ML",
+          "shap": 11.88,
+          "raw": 0.022,
+          "evidence": "2.2% rework rate over the trailing 90 days",
+          "contributionPct": 29.8
+        },
+        {
+          "id": "SLA_HISTORY",
+          "source": "ML",
+          "shap": 10.48,
+          "raw": 0.91,
+          "evidence": "91.0% on-time across 400 jobs in the last 90 days",
+          "contributionPct": 26.3
+        },
+        {
+          "id": "FIRST_TIME_FIX",
+          "source": "ML",
+          "shap": 6.99,
+          "raw": 0.849,
+          "evidence": "84.9% first-time-fix rate over 400 jobs",
+          "contributionPct": 17.5
+        },
+        {
+          "id": "CUSTOMER_SATISFACTION",
+          "source": "ML",
+          "shap": 5.45,
+          "raw": 4.23,
+          "evidence": "4.23/5.0 average customer rating",
+          "contributionPct": 13.7
+        },
+        {
+          "id": "DATA_SUFFICIENCY",
+          "source": "ML",
+          "shap": 5.02,
+          "raw": null,
+          "evidence": "Vendor performance history classified SUFFICIENT",
+          "contributionPct": 12.6
+        }
+      ],
+      "counterfactual": null,
+      "rationale": {
+        "template": "Ranked #4 of 6 eligible. Drivers: 2.2% rework rate over the trailing 90 days; 91.0% on-time across 400 jobs in the last 90 days; 84.9% first-time-fix rate over 400 jobs.",
+        "narrative": null,
+        "source": "TEMPLATE",
+        "groundednessCheck": "SKIPPED",
+        "fallbackUsed": false
+      },
+      "automationEligible": true,
+      "blockingGates": []
+    },
+    {
+      "rank": 5,
+      "vendorId": "VEN-00016",
+      "finalScore": 54.32,
+      "ruleScore": 74.06,
+      "mlScore": 8.79,
+      "confidence": 0.807,
+      "confidenceBand": "HIGH",
+      "predictions": {
+        "pSlaMet": {
+          "value": 0.761
+        },
+        "pFirstTimeFix": {
+          "value": 0.65
+        },
+        "pAcceptWithin15m": {
+          "value": 0.705
+        },
+        "expectedCostUsd": {
+          "p50": 607.2,
+          "p90": 850.08
+        }
+      },
+      "factors": [
+        {
+          "id": "SLA_HISTORY",
+          "source": "ML",
+          "shap": 15.75,
+          "raw": 0.979,
+          "evidence": "97.9% on-time across 116 jobs in the last 90 days",
+          "contributionPct": 32.4
+        },
+        {
+          "id": "PROXIMITY",
+          "source": "ML",
+          "shap": 11.19,
+          "raw": 36.1,
+          "evidence": "36.1 km from job site",
+          "contributionPct": 23.0
+        },
+        {
+          "id": "CURRENT_LOAD",
+          "source": "ML",
+          "shap": -8.16,
+          "raw": 0.763,
+          "evidence": "76.3% utilised, 13 open jobs",
+          "contributionPct": -16.8
+        },
+        {
+          "id": "SLA_TIME_PRESSURE",
+          "source": "ML",
+          "shap": 6.81,
+          "raw": 48.0,
+          "evidence": "48.0 hours remain until the SLA deadline",
+          "contributionPct": 14.0
+        },
+        {
+          "id": "RESPONSE_TIME",
+          "source": "ML",
+          "shap": -6.73,
+          "raw": 169,
+          "evidence": "averages 169 min to respond to a dispatch",
+          "contributionPct": -13.8
+        }
+      ],
+      "counterfactual": null,
+      "rationale": {
+        "template": "Ranked #5 of 6 eligible. Drivers: 97.9% on-time across 116 jobs in the last 90 days; 36.1 km from job site; 48.0 hours remain until the SLA deadline. Detractors: 76.3% utilised, 13 open jobs; averages 169 min to respond to a dispatch.",
+        "narrative": null,
+        "source": "TEMPLATE",
+        "groundednessCheck": "SKIPPED",
+        "fallbackUsed": false
+      },
+      "automationEligible": true,
+      "blockingGates": []
+    }
+  ],
+  "featureSnapshotUri": "file://logs/features/SCR-05230F1E2CF740A2B.json"
+}

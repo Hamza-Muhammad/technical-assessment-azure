@@ -1,0 +1,30 @@
+{
+  "rulesetVersion": "RULES-2026.09.1",
+  "mlTrustFactor": 0.55,
+  "blendWeightCap": 0.55,
+  "ruleWeights": {
+    "slaHitRate": 0.30,
+    "proximity": 0.20,
+    "firstTimeFix": 0.15,
+    "costIndex": 0.15,
+    "availableCapacity": 0.10,
+    "tierBonus": 0.10
+  },
+  "tierBonusPoints": {
+    "PREFERRED": 10,
+    "STANDARD": 5,
+    "PROBATIONARY": 0
+  },
+  "proximityMaxKm": 80,
+  "afterHoursGuardrailPct": -1.8,
+  "confidenceBands": {
+    "HIGH": 0.80,
+    "MEDIUM": 0.55
+  },
+  "vendorAcceptTimeoutSeconds": 120,
+  "dispatcherReviewTimeoutSeconds": 300,
+  "maxRetryAttempts": 2,
+  "featureFlags": {
+    "ENABLE_LLM_NARRATION": false
+  }
+}

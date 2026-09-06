@@ -1,0 +1,59 @@
+{
+  "type": "job.scoring_requested.v1",
+  "jobId": "JOB-DEMO-002",
+  "sessionId": "JOB-DEMO-002",
+  "correlationId": "01J8Z9K4M2QW3E5R7T9Y1U3I6P",
+  "occurredAtUtc": "2026-09-04T15:42:17Z",
+  "data": {
+    "job": {
+      "type": "job.created.v1",
+      "jobId": "JOB-DEMO-002",
+      "correlationId": "01J8Z9K4M2QW3E5R7T9Y1U3I6P",
+      "occurredAtUtc": "2026-09-18T14:22:07Z",
+      "data": {
+        "customerId": "CUST-000188500",
+        "accountTier": "ENTERPRISE",
+        "site": {
+          "siteId": "SITE-0043200",
+          "geo": {
+            "lat": 41.878,
+            "lon": -87.63
+          },
+          "addressRef": "pii://address/9f1a22b3",
+          "timezone": "America/Chicago"
+        },
+        "job": {
+          "tradeCategory": "HVAC",
+          "priority": "P1",
+          "requiresCertification": [
+            "EPA_608_UNIVERSAL"
+          ],
+          "requiresEquipment": [
+            "CRANE_LIFT"
+          ],
+          "estimatedLabourHours": 3.5,
+          "notToExceedUsd": 4500,
+          "isRecall": false
+        },
+        "sla": {
+          "responseDueUtc": "2026-09-18T18:22:06Z",
+          "resolutionDueUtc": "2026-09-19T14:22:06Z",
+          "sensitivity": "CRITICAL",
+          "breachPenaltyUsd": 2500
+        },
+        "risk": {
+          "riskTier": "HIGH",
+          "safetyRisk": true,
+          "revenueAtRiskUsd": 18000
+        },
+        "dispatch": {
+          "excludedVendorIds": [
+            "VEN-00987"
+          ],
+          "allowAutoAssign": true
+        }
+      }
+    }
+  },
+  "messageId": "MSG-EXAMPLE-0001"
+}

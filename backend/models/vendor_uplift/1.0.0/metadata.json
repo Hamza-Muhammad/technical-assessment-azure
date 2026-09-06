@@ -1,0 +1,14 @@
+{
+  "modelName": "vendor-uplift",
+  "modelVersion": "1.0.0",
+  "trainedAtUtc": "2026-09-04T13:33:18Z",
+  "trainingRowCount": 5100,
+  "holdoutRowCount": 900,
+  "offlineMetrics": {
+    "auc": 0.7686,
+    "brierScore": 0.0733,
+    "expectedCalibrationError": 0.0,
+    "note": "Synthetic training data - these numbers are illustrative, not a real-world benchmark."
+  },
+  "gitSha": "5253258cd689f699e6d45d07a33171a07f8fba1d"
+}

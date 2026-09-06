@@ -1,0 +1,1794 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "RetailFixIt Vendor Dispatch API",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://<functionAppName>.azurewebsites.net/api"
+    }
+  ],
+  "paths": {
+    "/jobs": {
+      "post": {
+        "summary": "Create a job",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobCreateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "summary": "List jobs",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/JobListItem"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/jobs/{jobId}": {
+      "get": {
+        "summary": "Get a job",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobEvent"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/jobs/{jobId}/recommendation": {
+      "get": {
+        "summary": "Get a job's scoring recommendation",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoreFactors"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/jobs/{jobId}/assignment": {
+      "post": {
+        "summary": "Accept or override the recommendation",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignmentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssignmentResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/jobs/{jobId}/completion": {
+      "post": {
+        "summary": "Record a job outcome (feeds the retraining loop)",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobCompletionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobCompletionResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/jobs/{jobId}/audit": {
+      "get": {
+        "summary": "Get the full audit trail for a job",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuditResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/vendors": {
+      "get": {
+        "summary": "List all vendors",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VendorProfile"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/jobs/{jobId}/replay": {
+      "post": {
+        "summary": "Re-publish JobCreated for an already-known job",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobCreateResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/admin/seed": {
+      "post": {
+        "summary": "Seed and dispatch every fixture job in data/jobs.json",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SeedResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "functionKey": []
+          }
+        ]
+      }
+    },
+    "/jobs/{jobId}/dispatch": {
+      "post": {
+        "summary": "Publish JobCreated for an already-known job (saga demo hook)",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DispatchResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "functionKey": []
+          }
+        ]
+      }
+    },
+    "/jobs/{jobId}/orchestration": {
+      "get": {
+        "summary": "Get the Durable orchestration status for a job",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrchestrationStatusResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "functionKey": []
+          }
+        ]
+      }
+    },
+    "/jobs/{jobId}/vendor-response": {
+      "post": {
+        "summary": "Raise the saga's VendorResponse external event",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendorResponseBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DispatchInfo": {
+        "properties": {
+          "excludedVendorIds": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Excludedvendorids",
+            "type": "array"
+          },
+          "allowAutoAssign": {
+            "default": true,
+            "title": "Allowautoassign",
+            "type": "boolean"
+          }
+        },
+        "title": "DispatchInfo",
+        "type": "object"
+      },
+      "GeoPoint": {
+        "properties": {
+          "lat": {
+            "title": "Lat",
+            "type": "number"
+          },
+          "lon": {
+            "title": "Lon",
+            "type": "number"
+          }
+        },
+        "required": [
+          "lat",
+          "lon"
+        ],
+        "title": "GeoPoint",
+        "type": "object"
+      },
+      "JobDetails": {
+        "properties": {
+          "tradeCategory": {
+            "title": "Tradecategory",
+            "enum": [
+              "HVAC",
+              "PLUMBING",
+              "ELECTRICAL",
+              "REFRIGERATION",
+              "ELEVATOR"
+            ],
+            "type": "string"
+          },
+          "priority": {
+            "title": "Priority",
+            "type": "string"
+          },
+          "requiresCertification": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Requirescertification",
+            "type": "array"
+          },
+          "requiresEquipment": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Requiresequipment",
+            "type": "array"
+          },
+          "estimatedLabourHours": {
+            "title": "Estimatedlabourhours",
+            "type": "number"
+          },
+          "notToExceedUsd": {
+            "title": "Nottoexceedusd",
+            "type": "number"
+          },
+          "isRecall": {
+            "default": false,
+            "title": "Isrecall",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "tradeCategory",
+          "priority",
+          "estimatedLabourHours",
+          "notToExceedUsd"
+        ],
+        "title": "JobDetails",
+        "type": "object"
+      },
+      "JobEventData": {
+        "properties": {
+          "customerId": {
+            "title": "Customerid",
+            "type": "string"
+          },
+          "accountTier": {
+            "title": "Accounttier",
+            "type": "string"
+          },
+          "site": {
+            "$ref": "#/components/schemas/SiteInfo"
+          },
+          "job": {
+            "$ref": "#/components/schemas/JobDetails"
+          },
+          "sla": {
+            "$ref": "#/components/schemas/SlaInfo"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/RiskInfo"
+          },
+          "dispatch": {
+            "$ref": "#/components/schemas/DispatchInfo"
+          }
+        },
+        "required": [
+          "customerId",
+          "accountTier",
+          "site",
+          "job",
+          "sla",
+          "risk",
+          "dispatch"
+        ],
+        "title": "JobEventData",
+        "type": "object"
+      },
+      "RiskInfo": {
+        "properties": {
+          "riskTier": {
+            "title": "Risktier",
+            "type": "string"
+          },
+          "safetyRisk": {
+            "default": false,
+            "title": "Safetyrisk",
+            "type": "boolean"
+          },
+          "revenueAtRiskUsd": {
+            "default": 0,
+            "title": "Revenueatriskusd",
+            "type": "number"
+          }
+        },
+        "required": [
+          "riskTier"
+        ],
+        "title": "RiskInfo",
+        "type": "object"
+      },
+      "SiteInfo": {
+        "properties": {
+          "siteId": {
+            "title": "Siteid",
+            "type": "string"
+          },
+          "geo": {
+            "$ref": "#/components/schemas/GeoPoint"
+          },
+          "addressRef": {
+            "title": "Addressref",
+            "type": "string"
+          },
+          "timezone": {
+            "title": "Timezone",
+            "type": "string"
+          }
+        },
+        "required": [
+          "siteId",
+          "geo",
+          "addressRef",
+          "timezone"
+        ],
+        "title": "SiteInfo",
+        "type": "object"
+      },
+      "SlaInfo": {
+        "properties": {
+          "responseDueUtc": {
+            "title": "Responsedueutc",
+            "type": "string"
+          },
+          "resolutionDueUtc": {
+            "title": "Resolutiondueutc",
+            "type": "string"
+          },
+          "sensitivity": {
+            "title": "Sensitivity",
+            "type": "string"
+          },
+          "breachPenaltyUsd": {
+            "default": 0,
+            "title": "Breachpenaltyusd",
+            "type": "number"
+          }
+        },
+        "required": [
+          "responseDueUtc",
+          "resolutionDueUtc",
+          "sensitivity"
+        ],
+        "title": "SlaInfo",
+        "type": "object"
+      },
+      "JobCreateRequest": {
+        "description": "POST /jobs request body. jobId/correlationId/occurredAtUtc are\nauto-generated by the server when omitted.",
+        "properties": {
+          "jobId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Jobid"
+          },
+          "correlationId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Correlationid"
+          },
+          "occurredAtUtc": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Occurredatutc"
+          },
+          "data": {
+            "$ref": "#/components/schemas/JobEventData"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "title": "JobCreateRequest",
+        "type": "object"
+      },
+      "JobCreateResponse": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "correlationId": {
+            "title": "Correlationid",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "scoringRunId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Scoringrunid"
+          }
+        },
+        "required": [
+          "jobId",
+          "correlationId",
+          "status"
+        ],
+        "title": "JobCreateResponse",
+        "type": "object"
+      },
+      "JobListItem": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "correlationId": {
+            "title": "Correlationid",
+            "type": "string"
+          },
+          "occurredAtUtc": {
+            "title": "Occurredatutc",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "jobId",
+          "type",
+          "correlationId",
+          "occurredAtUtc",
+          "status"
+        ],
+        "title": "JobListItem",
+        "type": "object"
+      },
+      "JobEvent": {
+        "description": "CloudEvents-shaped envelope. `type` distinguishes lifecycle stage\n(job.created.v1, job.assigned.v1, job.completed.v1, ...).",
+        "properties": {
+          "type": {
+            "default": "job.created.v1",
+            "title": "Type",
+            "type": "string"
+          },
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "correlationId": {
+            "title": "Correlationid",
+            "type": "string"
+          },
+          "occurredAtUtc": {
+            "title": "Occurredatutc",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/JobEventData"
+          }
+        },
+        "required": [
+          "jobId",
+          "correlationId",
+          "occurredAtUtc",
+          "data"
+        ],
+        "title": "JobEvent",
+        "type": "object"
+      },
+      "Binding": {
+        "properties": {
+          "rulesetVersion": {
+            "title": "Rulesetversion",
+            "type": "string"
+          },
+          "modelName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Modelname"
+          },
+          "modelVersion": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Modelversion"
+          },
+          "scoringMode": {
+            "title": "Scoringmode",
+            "type": "string"
+          },
+          "mlTrustFactor": {
+            "title": "Mltrustfactor",
+            "type": "number"
+          },
+          "degradedReason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Degradedreason"
+          }
+        },
+        "required": [
+          "rulesetVersion",
+          "scoringMode",
+          "mlTrustFactor"
+        ],
+        "title": "Binding",
+        "type": "object"
+      },
+      "CandidateSummary": {
+        "properties": {
+          "vendorsInNetwork": {
+            "title": "Vendorsinnetwork",
+            "type": "integer"
+          },
+          "afterHardFilter": {
+            "title": "Afterhardfilter",
+            "type": "integer"
+          },
+          "exclusions": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "default": {},
+            "title": "Exclusions",
+            "type": "object"
+          }
+        },
+        "required": [
+          "vendorsInNetwork",
+          "afterHardFilter"
+        ],
+        "title": "CandidateSummary",
+        "type": "object"
+      },
+      "CostPrediction": {
+        "properties": {
+          "p50": {
+            "title": "P50",
+            "type": "number"
+          },
+          "p90": {
+            "title": "P90",
+            "type": "number"
+          }
+        },
+        "required": [
+          "p50",
+          "p90"
+        ],
+        "title": "CostPrediction",
+        "type": "object"
+      },
+      "Factor": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "shap": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Shap"
+          },
+          "ruleId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ruleid"
+          },
+          "contributionPct": {
+            "title": "Contributionpct",
+            "type": "number"
+          },
+          "raw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Raw"
+          },
+          "evidence": {
+            "title": "Evidence",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "contributionPct",
+          "evidence"
+        ],
+        "title": "Factor",
+        "type": "object"
+      },
+      "PredictionValue": {
+        "properties": {
+          "value": {
+            "title": "Value",
+            "type": "number"
+          },
+          "ci90": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ci90"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "title": "PredictionValue",
+        "type": "object"
+      },
+      "Predictions": {
+        "properties": {
+          "pSlaMet": {
+            "$ref": "#/components/schemas/PredictionValue"
+          },
+          "pFirstTimeFix": {
+            "$ref": "#/components/schemas/PredictionValue"
+          },
+          "pAcceptWithin15m": {
+            "$ref": "#/components/schemas/PredictionValue"
+          },
+          "expectedCostUsd": {
+            "$ref": "#/components/schemas/CostPrediction"
+          }
+        },
+        "required": [
+          "pSlaMet",
+          "pFirstTimeFix",
+          "pAcceptWithin15m",
+          "expectedCostUsd"
+        ],
+        "title": "Predictions",
+        "type": "object"
+      },
+      "RankedVendor": {
+        "properties": {
+          "rank": {
+            "title": "Rank",
+            "type": "integer"
+          },
+          "vendorId": {
+            "title": "Vendorid",
+            "type": "string"
+          },
+          "finalScore": {
+            "title": "Finalscore",
+            "type": "number"
+          },
+          "ruleScore": {
+            "title": "Rulescore",
+            "type": "number"
+          },
+          "mlScore": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Mlscore"
+          },
+          "confidence": {
+            "title": "Confidence",
+            "type": "number"
+          },
+          "confidenceBand": {
+            "title": "Confidenceband",
+            "type": "string"
+          },
+          "predictions": {
+            "$ref": "#/components/schemas/Predictions"
+          },
+          "factors": {
+            "items": {
+              "$ref": "#/components/schemas/Factor"
+            },
+            "title": "Factors",
+            "type": "array"
+          },
+          "counterfactual": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Counterfactual"
+          },
+          "rationale": {
+            "$ref": "#/components/schemas/Rationale"
+          },
+          "automationEligible": {
+            "title": "Automationeligible",
+            "type": "boolean"
+          },
+          "blockingGates": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Blockinggates",
+            "type": "array"
+          }
+        },
+        "required": [
+          "rank",
+          "vendorId",
+          "finalScore",
+          "ruleScore",
+          "confidence",
+          "confidenceBand",
+          "predictions",
+          "factors",
+          "rationale",
+          "automationEligible"
+        ],
+        "title": "RankedVendor",
+        "type": "object"
+      },
+      "Rationale": {
+        "properties": {
+          "template": {
+            "title": "Template",
+            "type": "string"
+          },
+          "narrative": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Narrative"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "groundednessCheck": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Groundednesscheck"
+          },
+          "fallbackUsed": {
+            "default": false,
+            "title": "Fallbackused",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "template",
+          "source"
+        ],
+        "title": "Rationale",
+        "type": "object"
+      },
+      "ScoreFactors": {
+        "properties": {
+          "scoringRunId": {
+            "title": "Scoringrunid",
+            "type": "string"
+          },
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "generatedAtUtc": {
+            "title": "Generatedatutc",
+            "type": "string"
+          },
+          "latencyMs": {
+            "title": "Latencyms",
+            "type": "number"
+          },
+          "binding": {
+            "$ref": "#/components/schemas/Binding"
+          },
+          "candidateSummary": {
+            "$ref": "#/components/schemas/CandidateSummary"
+          },
+          "ranked": {
+            "items": {
+              "$ref": "#/components/schemas/RankedVendor"
+            },
+            "title": "Ranked",
+            "type": "array"
+          },
+          "featureSnapshotUri": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Featuresnapshoturi"
+          }
+        },
+        "required": [
+          "scoringRunId",
+          "jobId",
+          "generatedAtUtc",
+          "latencyMs",
+          "binding",
+          "candidateSummary",
+          "ranked"
+        ],
+        "title": "ScoreFactors",
+        "type": "object"
+      },
+      "OverrideReasonCode": {
+        "enum": [
+          "CUSTOMER_RELATIONSHIP",
+          "LOCAL_KNOWLEDGE",
+          "CAPACITY_DATA_WRONG",
+          "PRIOR_QUALITY_ISSUE",
+          "MODEL_DISAGREE_OTHER"
+        ],
+        "title": "OverrideReasonCode",
+        "type": "string"
+      },
+      "AssignmentRequest": {
+        "properties": {
+          "selectedVendorId": {
+            "title": "Selectedvendorid",
+            "type": "string"
+          },
+          "overrideReasonCode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OverrideReasonCode"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Note"
+          }
+        },
+        "required": [
+          "selectedVendorId"
+        ],
+        "title": "AssignmentRequest",
+        "type": "object"
+      },
+      "AssignmentSource": {
+        "enum": [
+          "AUTO",
+          "DISPATCHER_ACCEPT",
+          "DISPATCHER_OVERRIDE"
+        ],
+        "title": "AssignmentSource",
+        "type": "string"
+      },
+      "AssignmentResponse": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "correlationId": {
+            "title": "Correlationid",
+            "type": "string"
+          },
+          "selectedVendorId": {
+            "title": "Selectedvendorid",
+            "type": "string"
+          },
+          "overrideReasonCode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OverrideReasonCode"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Note"
+          },
+          "assignmentSource": {
+            "$ref": "#/components/schemas/AssignmentSource"
+          },
+          "assignedAtUtc": {
+            "title": "Assignedatutc",
+            "type": "string"
+          }
+        },
+        "required": [
+          "jobId",
+          "correlationId",
+          "selectedVendorId",
+          "assignmentSource",
+          "assignedAtUtc"
+        ],
+        "title": "AssignmentResponse",
+        "type": "object"
+      },
+      "JobCompletionRequest": {
+        "description": "POST /jobs/{jobId}/completion request body - closes the loop for\nml/build_training_set.py.",
+        "properties": {
+          "vendorId": {
+            "title": "Vendorid",
+            "type": "string"
+          },
+          "slaMet": {
+            "title": "Slamet",
+            "type": "boolean"
+          },
+          "firstTimeFix": {
+            "title": "Firsttimefix",
+            "type": "boolean"
+          },
+          "acceptedWithin15m": {
+            "title": "Acceptedwithin15M",
+            "type": "boolean"
+          },
+          "actualCostUsd": {
+            "title": "Actualcostusd",
+            "type": "number"
+          }
+        },
+        "required": [
+          "vendorId",
+          "slaMet",
+          "firstTimeFix",
+          "acceptedWithin15m",
+          "actualCostUsd"
+        ],
+        "title": "JobCompletionRequest",
+        "type": "object"
+      },
+      "JobCompletionResponse": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "recorded": {
+            "title": "Recorded",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "jobId",
+          "recorded"
+        ],
+        "title": "JobCompletionResponse",
+        "type": "object"
+      },
+      "AuditResponse": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "job": {
+            "$ref": "#/components/schemas/JobEvent"
+          },
+          "scoreFactors": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ScoreFactors"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "assignment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssignmentResponse"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "events": {
+            "default": [],
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Events",
+            "type": "array"
+          },
+          "decisions": {
+            "default": [],
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Decisions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "jobId",
+          "job"
+        ],
+        "title": "AuditResponse",
+        "type": "object"
+      },
+      "CapabilitiesInfo": {
+        "properties": {
+          "tradeCategories": {
+            "items": {
+              "enum": [
+                "HVAC",
+                "PLUMBING",
+                "ELECTRICAL",
+                "REFRIGERATION",
+                "ELEVATOR"
+              ],
+              "type": "string"
+            },
+            "title": "Tradecategories",
+            "type": "array"
+          },
+          "equipment": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Equipment",
+            "type": "array"
+          },
+          "supportsAfterHours": {
+            "default": false,
+            "title": "Supportsafterhours",
+            "type": "boolean"
+          },
+          "maxConcurrentJobs": {
+            "title": "Maxconcurrentjobs",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "tradeCategories",
+          "maxConcurrentJobs"
+        ],
+        "title": "CapabilitiesInfo",
+        "type": "object"
+      },
+      "CapacityInfo": {
+        "properties": {
+          "asOfUtc": {
+            "title": "Asofutc",
+            "type": "string"
+          },
+          "openJobs": {
+            "title": "Openjobs",
+            "type": "integer"
+          },
+          "utilizationPct": {
+            "title": "Utilizationpct",
+            "type": "number"
+          },
+          "acceptingNewWork": {
+            "title": "Acceptingnewwork",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "asOfUtc",
+          "openJobs",
+          "utilizationPct",
+          "acceptingNewWork"
+        ],
+        "title": "CapacityInfo",
+        "type": "object"
+      },
+      "CertificationRef": {
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "expiresOn": {
+            "title": "Expireson",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "expiresOn"
+        ],
+        "title": "CertificationRef",
+        "type": "object"
+      },
+      "CommercialInfo": {
+        "properties": {
+          "standardHourlyUsd": {
+            "title": "Standardhourlyusd",
+            "type": "number"
+          },
+          "afterHoursHourlyUsd": {
+            "title": "Afterhourshourlyusd",
+            "type": "number"
+          }
+        },
+        "required": [
+          "standardHourlyUsd",
+          "afterHoursHourlyUsd"
+        ],
+        "title": "CommercialInfo",
+        "type": "object"
+      },
+      "ComplianceInfo": {
+        "properties": {
+          "insuranceValidUntil": {
+            "title": "Insurancevaliduntil",
+            "type": "string"
+          },
+          "certifications": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/CertificationRef"
+            },
+            "title": "Certifications",
+            "type": "array"
+          },
+          "isCompliant": {
+            "title": "Iscompliant",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "insuranceValidUntil",
+          "isCompliant"
+        ],
+        "title": "ComplianceInfo",
+        "type": "object"
+      },
+      "CoverageInfo": {
+        "properties": {
+          "postalCodes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Postalcodes",
+            "type": "array"
+          },
+          "homeBaseGeo": {
+            "$ref": "#/components/schemas/GeoPoint"
+          },
+          "maxTravelKm": {
+            "title": "Maxtravelkm",
+            "type": "number"
+          }
+        },
+        "required": [
+          "postalCodes",
+          "homeBaseGeo",
+          "maxTravelKm"
+        ],
+        "title": "CoverageInfo",
+        "type": "object"
+      },
+      "PerformanceInfo": {
+        "properties": {
+          "windowDays": {
+            "title": "Windowdays",
+            "type": "integer"
+          },
+          "jobsCompleted": {
+            "title": "Jobscompleted",
+            "type": "integer"
+          },
+          "slaHitRate": {
+            "title": "Slahitrate",
+            "type": "number"
+          },
+          "firstTimeFixRate": {
+            "title": "Firsttimefixrate",
+            "type": "number"
+          },
+          "acceptanceRate": {
+            "title": "Acceptancerate",
+            "type": "number"
+          },
+          "avgResponseMinutes": {
+            "title": "Avgresponseminutes",
+            "type": "number"
+          },
+          "reworkRate": {
+            "title": "Reworkrate",
+            "type": "number"
+          },
+          "costIndex": {
+            "title": "Costindex",
+            "type": "number"
+          },
+          "csat": {
+            "title": "Csat",
+            "type": "number"
+          },
+          "dataSufficiency": {
+            "title": "Datasufficiency",
+            "type": "string"
+          }
+        },
+        "required": [
+          "windowDays",
+          "jobsCompleted",
+          "slaHitRate",
+          "firstTimeFixRate",
+          "acceptanceRate",
+          "avgResponseMinutes",
+          "reworkRate",
+          "costIndex",
+          "csat",
+          "dataSufficiency"
+        ],
+        "title": "PerformanceInfo",
+        "type": "object"
+      },
+      "VendorProfile": {
+        "properties": {
+          "vendorId": {
+            "title": "Vendorid",
+            "type": "string"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "tier": {
+            "title": "Tier",
+            "type": "string"
+          },
+          "tenureDays": {
+            "title": "Tenuredays",
+            "type": "integer"
+          },
+          "onProbation": {
+            "default": false,
+            "title": "Onprobation",
+            "type": "boolean"
+          },
+          "compliance": {
+            "$ref": "#/components/schemas/ComplianceInfo"
+          },
+          "capabilities": {
+            "$ref": "#/components/schemas/CapabilitiesInfo"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/CoverageInfo"
+          },
+          "capacity": {
+            "$ref": "#/components/schemas/CapacityInfo"
+          },
+          "performance": {
+            "$ref": "#/components/schemas/PerformanceInfo"
+          },
+          "commercial": {
+            "$ref": "#/components/schemas/CommercialInfo"
+          }
+        },
+        "required": [
+          "vendorId",
+          "displayName",
+          "status",
+          "tier",
+          "tenureDays",
+          "compliance",
+          "capabilities",
+          "coverage",
+          "capacity",
+          "performance",
+          "commercial"
+        ],
+        "title": "VendorProfile",
+        "type": "object"
+      },
+      "SeedResult": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "dispatched": {
+            "title": "Dispatched",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "jobId",
+          "dispatched"
+        ],
+        "title": "SeedResult",
+        "type": "object"
+      },
+      "SeedResponse": {
+        "properties": {
+          "seeded": {
+            "items": {
+              "$ref": "#/components/schemas/SeedResult"
+            },
+            "title": "Seeded",
+            "type": "array"
+          }
+        },
+        "required": [
+          "seeded"
+        ],
+        "title": "SeedResponse",
+        "type": "object"
+      },
+      "DispatchResponse": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "dispatched": {
+            "title": "Dispatched",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "jobId",
+          "dispatched"
+        ],
+        "title": "DispatchResponse",
+        "type": "object"
+      },
+      "OrchestrationStatusResponse": {
+        "properties": {
+          "jobId": {
+            "title": "Jobid",
+            "type": "string"
+          },
+          "runtimeStatus": {
+            "title": "Runtimestatus",
+            "type": "string"
+          },
+          "customStatus": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Customstatus"
+          },
+          "createdTime": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Createdtime"
+          },
+          "lastUpdatedTime": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Lastupdatedtime"
+          },
+          "output": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Output"
+          }
+        },
+        "required": [
+          "jobId",
+          "runtimeStatus"
+        ],
+        "title": "OrchestrationStatusResponse",
+        "type": "object"
+      },
+      "VendorResponseBody": {
+        "description": "POST /jobs/{jobId}/vendor-response request body - raises the saga's\nVendorResponse external event.",
+        "properties": {
+          "accepted": {
+            "title": "Accepted",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "accepted"
+        ],
+        "title": "VendorResponseBody",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "functionKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-functions-key"
+      }
+    }
+  }
+}

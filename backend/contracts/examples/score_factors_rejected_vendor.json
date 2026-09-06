@@ -1,0 +1,24 @@
+{
+  "scoringRunId": "SCR-2E7F14D761894B7A8",
+  "jobId": "JOB-DEMO-003",
+  "generatedAtUtc": "2026-09-04T15:43:11Z",
+  "latencyMs": 0.3,
+  "binding": {
+    "rulesetVersion": "RULES-2026.09.1",
+    "modelName": null,
+    "modelVersion": null,
+    "scoringMode": "RULES_PLUS_ML",
+    "mlTrustFactor": 0.55,
+    "degradedReason": "NO_ELIGIBLE_VENDORS"
+  },
+  "candidateSummary": {
+    "vendorsInNetwork": 25,
+    "afterHardFilter": 0,
+    "exclusions": {
+      "TRADE_MISMATCH": 24,
+      "NOT_COMPLIANT": 1
+    }
+  },
+  "ranked": [],
+  "featureSnapshotUri": "file://logs/features/SCR-2E7F14D761894B7A8.json"
+}

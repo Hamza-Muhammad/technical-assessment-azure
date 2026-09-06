@@ -1,0 +1,23 @@
+# Core domain (framework-free) - contracts/data model
+pydantic>=2.7
+
+# ML: rule+ML hybrid scoring, explainability
+lightgbm==4.5.0
+shap>=0.46
+scikit-learn>=1.5
+numpy>=1.26
+pandas>=2.2
+
+# Event bus (Azure Service Bus adapter)
+azure-servicebus>=7.12
+azure-identity>=1.17
+
+# State/audit persistence (Blob backend - see store.py, audit.py)
+azure-storage-blob>=12.20
+
+# Azure OpenAI narration (optional, behind ENABLE_LLM_NARRATION)
+openai>=1.40
+
+# Durable Functions orchestrator + HTTP API (deployed target)
+azure-functions>=1.21
+azure-functions-durable>=1.2

@@ -1,0 +1,25 @@
+{
+  "features": [
+    "slaHitRate",
+    "firstTimeFixRate",
+    "acceptanceRate",
+    "reworkRate",
+    "avgResponseMinutes",
+    "csat",
+    "dataSufficiency",
+    "utilizationPct",
+    "openJobs",
+    "priority",
+    "estimatedLabourHours",
+    "notToExceedUsd",
+    "isRecall",
+    "riskTier",
+    "safetyRisk",
+    "slaSensitivity",
+    "distanceKm",
+    "isAfterHours",
+    "slaHoursRemaining",
+    "certMatch"
+  ],
+  "schemaHash": "1f66c2d9e21a28f34089587845bd7377a3484f85c74c10a3c01c31ab4fe6da5e"
+}

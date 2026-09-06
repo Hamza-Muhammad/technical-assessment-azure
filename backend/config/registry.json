@@ -1,0 +1,7 @@
+{
+  "modelName": "vendor-uplift",
+  "aliases": {
+    "production": "1.0.0",
+    "shadow": "1.1.0"
+  }
+}

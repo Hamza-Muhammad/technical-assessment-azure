@@ -1,0 +1,114 @@
+{
+  "type": "job.recommendation_generated.v1",
+  "jobId": "JOB-DEMO-002",
+  "sessionId": "JOB-DEMO-002",
+  "correlationId": "01J8Z9K4M2QW3E5R7T9Y1U3I6P",
+  "occurredAtUtc": "2026-09-04T15:43:11Z",
+  "data": {
+    "scoreFactors": {
+      "scoringRunId": "SCR-9582A72A0684478C9",
+      "jobId": "JOB-DEMO-002",
+      "generatedAtUtc": "2026-09-04T15:43:11Z",
+      "latencyMs": 2226.9,
+      "binding": {
+        "rulesetVersion": "RULES-2026.09.1",
+        "modelName": "vendor-uplift",
+        "modelVersion": "1.0.0",
+        "scoringMode": "RULES_PLUS_ML",
+        "mlTrustFactor": 0.55,
+        "degradedReason": null
+      },
+      "candidateSummary": {
+        "vendorsInNetwork": 25,
+        "afterHardFilter": 1,
+        "exclusions": {
+          "TRADE_MISMATCH": 18,
+          "EQUIPMENT_MISSING": 5,
+          "NOT_COMPLIANT": 1
+        }
+      },
+      "ranked": [
+        {
+          "rank": 1,
+          "vendorId": "VEN-00021",
+          "finalScore": 70.11,
+          "ruleScore": 88.21,
+          "mlScore": 28.37,
+          "confidence": 0.865,
+          "confidenceBand": "HIGH",
+          "predictions": {
+            "pSlaMet": {
+              "value": 0.822
+            },
+            "pFirstTimeFix": {
+              "value": 0.784
+            },
+            "pAcceptWithin15m": {
+              "value": 0.912
+            },
+            "expectedCostUsd": {
+              "p50": 2425.5,
+              "p90": 3395.7
+            }
+          },
+          "factors": [
+            {
+              "id": "PROXIMITY",
+              "source": "ML",
+              "shap": 24.73,
+              "raw": 10.8,
+              "evidence": "10.8 km from job site",
+              "contributionPct": 40.3
+            },
+            {
+              "id": "SLA_HISTORY",
+              "source": "ML",
+              "shap": 12.39,
+              "raw": 0.943,
+              "evidence": "94.3% on-time across 214 jobs in the last 90 days",
+              "contributionPct": 20.2
+            },
+            {
+              "id": "FIRST_TIME_FIX",
+              "source": "ML",
+              "shap": 11.07,
+              "raw": 0.867,
+              "evidence": "86.7% first-time-fix rate over 214 jobs",
+              "contributionPct": 18.0
+            },
+            {
+              "id": "REWORK_RATE",
+              "source": "ML",
+              "shap": 9.37,
+              "raw": 0.038,
+              "evidence": "3.8% rework rate over the trailing 90 days",
+              "contributionPct": 15.3
+            },
+            {
+              "id": "DATA_SUFFICIENCY",
+              "source": "ML",
+              "shap": 3.77,
+              "raw": null,
+              "evidence": "Vendor performance history classified SUFFICIENT",
+              "contributionPct": 6.1
+            }
+          ],
+          "counterfactual": null,
+          "rationale": {
+            "template": "Ranked #1 of 1 eligible. Drivers: 10.8 km from job site; 94.3% on-time across 214 jobs in the last 90 days; 86.7% first-time-fix rate over 214 jobs.",
+            "narrative": null,
+            "source": "TEMPLATE",
+            "groundednessCheck": "SKIPPED",
+            "fallbackUsed": false
+          },
+          "automationEligible": false,
+          "blockingGates": [
+            "RISK_TIER_HIGH"
+          ]
+        }
+      ],
+      "featureSnapshotUri": "file://logs/features/SCR-9582A72A0684478C9.json"
+    }
+  },
+  "messageId": "MSG-EXAMPLE-0002"
+}

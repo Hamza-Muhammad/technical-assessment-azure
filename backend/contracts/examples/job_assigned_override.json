@@ -1,0 +1,16 @@
+{
+  "type": "job.assigned.v1",
+  "jobId": "JOB-DEMO-001",
+  "sessionId": "JOB-DEMO-001",
+  "correlationId": "01J8Z9K4M2QW3E5R7T9Y1U3I5O",
+  "occurredAtUtc": "2026-09-04T15:42:20Z",
+  "data": {
+    "jobId": "JOB-DEMO-001",
+    "selectedVendorId": "VEN-00007",
+    "overrideReasonCode": "LOCAL_KNOWLEDGE",
+    "note": "Dispatcher knows this vendor already has a technician on-site nearby today.",
+    "assignmentSource": "DISPATCHER_OVERRIDE",
+    "assignedAtUtc": "2026-09-18T14:35:00Z"
+  },
+  "messageId": "MSG-EXAMPLE-0003"
+}
